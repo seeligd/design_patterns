@@ -1,32 +1,38 @@
 public abstract class Duck {
-   FlyBehavior flyBehavior;
-   QuackBehavior quackBehavior;
 
-   public Duck()
-   {
+	// Abstract class contains 'behaviors' - things that a duck can do
+	// Since behaviors are shared by some duck types but not all, whoever 
+	// implements a duck can choose which behaviors get injected via 
+	// setFlyBehavior and setQuackBehavior
 
-   }
-   public abstract void display();
+	FlyBehavior flyBehavior;
+	QuackBehavior quackBehavior;
 
-   public void performFly()
-   {
-      flyBehavior.fly();
-   }
+	public Duck()
+	{
 
-   public void performQuack()
-   {
-      quackBehavior.quack();
-   }
+	}
+	public abstract void display();
 
-   public void swim() {
-      System.out.println("All ducks float, even decoys!");
-   }
+	public void performFly()
+	{
+		flyBehavior.fly();
+	}
 
-   public void setFlyBehavior(FlyBehavior fb) {
-   	   flyBehavior = fb;
-   }
+	public void performQuack()
+	{
+		quackBehavior.quack();
+	}
 
-   public void setQuackBehavior(QuackBehavior qb) {
-   	   quackBehavior = qb;
-   }
+	public void swim() {
+		System.out.println("All ducks float, even decoys!");
+	}
+
+	public void setFlyBehavior(FlyBehavior fb) {
+		flyBehavior = fb;
+	}
+
+	public void setQuackBehavior(QuackBehavior qb) {
+		quackBehavior = qb;
+	}
 }
